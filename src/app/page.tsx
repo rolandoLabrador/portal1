@@ -6,15 +6,10 @@ import Navbar from "../components/header/page";
 import Hero from "../components/hero/hero";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import { SessionProvider } from "next-auth/react";
-import { Session } from "next-auth";
 
-interface Props {
-  session: Session | null;
-}
-
-const Home: React.FC<Props> = ({ session }) => {
+const Home: React.FC = () => {
   return (
-    <SessionProvider session={session}>
+    <SessionProvider>
       <ProtectedRoute>
         <div>
           <Navbar />
